@@ -3,6 +3,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
 import { ServerSettingsService } from './app/settings/services/server-settings.service';
 import { configureSwagger } from './common/configs/swagger.config';
+import { configureValidation } from './common/configs/validation.config';
 
 async function bootstrap(): Promise<void> {
   const app = await NestFactory.create(AppModule);
@@ -12,6 +13,7 @@ async function bootstrap(): Promise<void> {
   const docsPath = serverSettings.getDocsPath();
   const isDevelopment = serverSettings.isDevelopment();
 
+  configureValidation(app, AppModule);
   if (isDevelopment) {
     configureSwagger(app, docsPath);
   }
