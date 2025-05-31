@@ -5,8 +5,10 @@ import { ServerMode } from '../types/server-mode.enum';
 import { Environment } from '../types/environment.class';
 
 @Injectable()
-export class ServerSettingsServiceImpl implements ServerSettingsService {
-  constructor(private readonly environmentService: EnvironmentService) {}
+export class ServerSettingsServiceImpl extends ServerSettingsService {
+  constructor(private readonly environmentService: EnvironmentService) {
+    super();
+  }
 
   getPort(): number {
     return this.environmentService.getNumber('SERVER_PORT');
