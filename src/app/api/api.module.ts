@@ -3,8 +3,10 @@ import { APP_FILTER } from '@nestjs/core';
 import { GlobalExceptionFilter } from './filters/global-exception.filter';
 import { ServerSettingsService } from '../settings/services/server-settings.service';
 import { EndpointLoggerMiddleware } from './middlewares/endpoint-logger.middleware';
+import { SettingsModule } from '../settings/settings.module';
 
 @Module({
+  imports: [SettingsModule],
   providers: [
     {
       provide: APP_FILTER,
