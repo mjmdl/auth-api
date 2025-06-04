@@ -4,6 +4,7 @@ import { AppModule } from './app/app.module';
 import { ServerSettingsService } from './app/settings/services/server-settings.service';
 import { configureSwagger } from './common/configs/swagger.config';
 import { configureValidation } from './common/configs/validation.config';
+import './common/utils/sql-template-string.util';
 
 async function bootstrap(): Promise<void> {
   const app = await NestFactory.create(AppModule);
