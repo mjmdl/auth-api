@@ -11,7 +11,7 @@ import {
 } from './client-service.interface';
 import { ClientRepository } from '../models/client.repository';
 import { CreateClientData } from '../models/client-repository.interface';
-import { ApiKeyService } from 'src/libraries/services/api-key.service';
+import { ApiKeyService } from 'src/libraries/api-key/services/api-key.service';
 import { NicknameIsTaken } from './client.exception';
 import { ClientNotFound } from './client.exception';
 import { countDefinedProperties } from 'src/common/utils/count-defined-properties.util';
