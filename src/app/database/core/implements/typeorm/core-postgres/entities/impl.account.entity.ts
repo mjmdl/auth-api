@@ -1,4 +1,4 @@
-import { Account } from 'src/app/database/entities/account.entity';
+import { Account } from 'src/app/database/core/entities/account.entity';
 import {
   Column,
   CreateDateColumn,

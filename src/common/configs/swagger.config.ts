@@ -12,6 +12,7 @@ export function configureSwagger(app: INestApplication, path: string): void {
     .setTitle(title)
     .setDescription(description)
     .setVersion(version)
+    .addTag('Clients', 'External systems that consume the API.')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

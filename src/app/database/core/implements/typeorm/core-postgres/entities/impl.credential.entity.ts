@@ -1,4 +1,4 @@
-import { Credential } from 'src/app/database/entities/credential.entity';
+import { Credential } from 'src/app/database/core/entities/credential.entity';
 import {
   Column,
   CreateDateColumn,

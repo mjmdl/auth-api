@@ -1,4 +1,4 @@
-import { Authority } from 'src/app/database/entities/authority.entity';
+import { Authority } from 'src/app/database/core/entities/authority.entity';
 import {
   Column,
   CreateDateColumn,

@@ -1,5 +1,5 @@
-import { Authority } from 'src/app/database/entities/authority.entity';
-import { Permission } from 'src/app/database/entities/permission.entity';
+import { Authority } from 'src/app/database/core/entities/authority.entity';
+import { Permission } from 'src/app/database/core/entities/permission.entity';
 import {
   Column,
   CreateDateColumn,

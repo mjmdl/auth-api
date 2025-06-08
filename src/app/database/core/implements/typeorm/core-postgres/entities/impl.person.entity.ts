@@ -1,4 +1,4 @@
-import { Person } from 'src/app/database/entities/person.entity';
+import { Person } from 'src/app/database/core/entities/person.entity';
 import {
   Column,
   CreateDateColumn,

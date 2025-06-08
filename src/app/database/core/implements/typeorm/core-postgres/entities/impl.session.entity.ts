@@ -1,4 +1,4 @@
-import { Session } from 'src/app/database/entities/session.entity';
+import { Session } from 'src/app/database/core/entities/session.entity';
 import {
   Column,
   CreateDateColumn,

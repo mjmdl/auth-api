@@ -1,6 +1,6 @@
-import { Account } from 'src/app/database/entities/account.entity';
-import { Client } from 'src/app/database/entities/client.entity';
-import { Permission } from 'src/app/database/entities/permission.entity';
+import { Account } from 'src/app/database/core/entities/account.entity';
+import { Client } from 'src/app/api/client/models/client.entity';
+import { Permission } from 'src/app/database/core/entities/permission.entity';
 import {
   Column,
   CreateDateColumn,
