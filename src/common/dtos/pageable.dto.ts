@@ -43,8 +43,8 @@ export class PageMetaResponse implements PageMeta {
   totalCount!: number;
 }
 
-export function PageResponse<T>(Class: TypeRef<T>): TypeRef<Page<T>> {
-  class PageDto<T> implements Page<T> {
+export function PageResponse<Data>(Class: TypeRef<Data>): TypeRef<Page<Data>> {
+  class PageDto implements Page<Data> {
     @ApiProperty({
       description: 'Page metadata.',
       type: () => PageMetaResponse,
@@ -56,7 +56,7 @@ export function PageResponse<T>(Class: TypeRef<T>): TypeRef<Page<T>> {
       type: () => Class,
       isArray: true,
     })
-    data!: T[];
+    data!: Data[];
   }
 
   return PageDto;

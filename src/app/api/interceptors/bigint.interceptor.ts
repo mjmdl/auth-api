@@ -12,7 +12,6 @@ export class BigIntInterceptor implements NestInterceptor {
     _context: ExecutionContext,
     next: CallHandler<any>,
   ): Observable<any> {
-    console.log('pei');
     return next.handle().pipe(map(value => this.transform(value)));
   }
 

@@ -12,10 +12,10 @@ import {
 import { ClientRepository } from '../models/client.repository';
 import { CreateClientData } from '../models/client-repository.interface';
 import { ApiKeyService } from 'src/libraries/services/api-key.service';
-import { NicknameIsTaken } from '../exceptions/nickname-is-taken.exception';
-import { ClientNotFound } from '../exceptions/client-not-found.exception';
+import { NicknameIsTaken } from './client.exception';
+import { ClientNotFound } from './client.exception';
 import { countDefinedProperties } from 'src/common/utils/count-defined-properties.util';
-import { NothingToUpdate } from 'src/common/exceptions/nothing-to-update.exception';
+import { NothingToUpdate } from 'src/common/exceptions/custom.exception';
 
 @Injectable()
 export class ClientService {

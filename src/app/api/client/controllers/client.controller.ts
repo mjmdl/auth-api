@@ -10,6 +10,7 @@ import {
   Query,
 } from '@nestjs/common';
 import {
+  ApiBadRequestResponse,
   ApiConflictResponse,
   ApiCreatedResponse,
   ApiNotFoundResponse,
@@ -17,8 +18,8 @@ import {
   ApiOperation,
   ApiTags,
 } from '@nestjs/swagger';
-import { ClientNotFound } from '../exceptions/client-not-found.exception';
-import { NicknameIsTaken } from '../exceptions/nickname-is-taken.exception';
+import { ClientNotFound } from '../services/client.exception';
+import { NicknameIsTaken } from '../services/client.exception';
 import { ClientService } from '../services/client.service';
 import {
   CreateClientBody,
@@ -29,6 +30,7 @@ import { ClientItemResponse } from './dtos/list-clients.dto';
 import { ClientsPageResponse, PageClientsQuery } from './dtos/page-clients.dto';
 import { ApiKeyResponse } from './dtos/reset-api-key.dto';
 import { UpdateClientBody } from './dtos/update-client.dto';
+import { NothingToUpdate } from 'src/common/exceptions/custom.exception';
 
 @ApiTags('Clients')
 @Controller('client')
@@ -51,6 +53,10 @@ export class ClientController {
 
   @ApiOperation({ summary: 'Update client.' })
   @ApiOkResponse({ description: 'Client updated successfully.' })
+  @ApiBadRequestResponse({
+    description:
+      'Bad Request:' + `\n- ${NothingToUpdate.TAG}: ${NothingToUpdate.BLURB}`,
+  })
   @ApiNotFoundResponse({
     description:
       'Not Found:' + `\n - ${ClientNotFound.TAG}: ${ClientNotFound.BLURB}`,
